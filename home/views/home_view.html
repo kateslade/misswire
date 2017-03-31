@@ -1,0 +1,159 @@
+<div class="row">
+
+    <div class="col-xs-12 col-md-12" id="banner_home">
+
+      <div class="banner_home"> 
+
+
+      </div>
+
+    </div>
+
+
+
+</div><!--row-->
+
+
+
+
+
+
+<div class="container" id="home">
+
+
+
+
+
+
+
+
+
+
+
+<div class="row">
+
+      <div class="col-xs-6  col-md-6" id="intro_top">
+
+        <h1 class="display-4"> Learn, Connect, Change </h1>
+
+     
+
+      </div>
+
+
+
+
+
+
+      <div class="col-xs-6 col-md-6" id="users_home">
+      
+          
+      
+       <?php while ($row = mysqli_fetch_array($r, MYSQLI_ASSOC)) { // Fetch each item.
+              
+                // Print the item within some HTML:
+                echo  $row['first_name'].' '.$row['last_name']. ' '.'('.$row['username'].')'.'<br />'; 
+ 
+        }?> 
+
+
+      </div>
+
+</div>
+
+
+
+
+
+<!--
+<div class="row">
+
+   <div  class="col-xs-12 col-md-12"> 
+          
+        <p style="text-align: center;"> quick facts</p>
+
+    </div>
+
+</div>
+-->
+
+
+
+
+
+
+<!--
+<div class="row">
+
+      <div  class="col-xs-12  col-md-12">
+
+          
+        <p> quick facts</p>
+
+
+      </div>
+
+    
+
+</div>
+-->
+
+
+
+<!--
+<div class="row">
+
+      <div class="col-xs-6 col-md-6">
+
+     
+       
+
+     
+
+      </div>
+
+
+
+      <div class="col-xs-6 col-md-6">
+
+        <div class="row">
+
+        <div class="col-xs-12 col-md-12">
+
+            <p> initiatives </p>
+
+        </div>
+
+        </div>
+
+
+
+        <div class="row">
+
+          <div class="col-xs-12 col-md-12">
+
+          <p>
+          
+         LINK THE GAP IS A SIMPLE TOOL FOR ANYONE  <br /> TO DIRECTLY SUPPORT SMALL-SCALE SOCIAL, HUMANITARIAN AND ENVIRONMENTAL <br />INTIATIVES AROUND
+         THE WORLD
+
+          </p>
+
+        </div>
+
+
+
+
+        </div>
+
+    
+      </div>
+
+</div>
+-->
+
+
+
+
+
+</div><!--home container-->
