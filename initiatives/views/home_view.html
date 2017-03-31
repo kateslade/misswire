@@ -1,29 +1,19 @@
-
+<!--top banner image-->
 <div class="row">
-
     <div class="col-xs-12 col-md-12" id="banner_initiatives">
-
       <div class="banner_initiatives">
-
       </div>
-
-    
-
     </div>
-
-</div><!--row-->
-
-
+</div>
+<!--top banner image-->
 
 
-
-
-
+<!--home container-->
 <div class="container" id="home">
-
-
-
-    <div class="col-lg-11 col-centered"> 
+   <div class="col-lg-11 col-centered"> 
+       
+       
+     <!--search-->  
     <form role="search">
         <div class="input-group">
             <input type="text" class="form-control" placeholder="Search LtG Initiatives" name="srch-term" id="srch-term">
@@ -32,19 +22,17 @@
             </div>
         </div>
         </form>
+      <!--search-->
 
 
         <hr />
 
 
-
- 
-
-
+        <!--map-->
         <div id="map">  </div>
-
-
+       <!--map-->
                      <?php 
+                        //loop to return all the available initiatives into json format
                         $rows = array();
                         while($row = mysqli_fetch_array($r, MYSQLI_ASSOC)) { // Fetch each item.
                                $rows[] = $row;
@@ -54,14 +42,8 @@
 
                     ?> 
           
-
         </div>
 
 
-
-
-
-
-
-
-</div><!--home container-->
+</div>
+<!--home container-->
