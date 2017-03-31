@@ -1,0 +1,159 @@
+/*fonts*/ /* typography */
+@font-face {
+  font-family: "Synchro_LET";
+  src: url(../../assets/fonts/Synchro_LET.ttf);
+}
+
+
+
+#lang_logo{
+
+	width: 200px; 
+	margin: 0 auto;
+	margin-bottom: 10px; 
+
+}
+
+
+h2{
+
+	text-align: center;
+	font-family: Synchro_LET;
+	text-align: center;
+
+}
+
+.col-centered{
+    float: none;
+    margin: 0 auto;
+    min-height: 1000px; 
+}
+
+video{
+
+width: 100%; 
+	margin: 0 auto;
+	
+
+}
+
+
+
+p.lead{
+
+	text-align: center;
+}
+
+
+
+
+
+
+#video_container{
+
+	width: 1024px;
+	margin: 0 auto;
+	margin-bottom: 10px; 
+	
+
+
+}
+
+
+
+
+
+
+p{
+
+	text-align: center;
+}
+
+
+
+label{
+text-align: center;
+}
+
+
+
+
+#video_container{
+
+	width: 100%;
+	margin: 0 auto;
+	min-height: 400px; 
+	padding: 5px; 
+
+}
+
+
+#logo_land{
+
+	width: 100%;
+	margin: 0 auto;
+	height: 300px; 
+	padding: 5px; 
+
+}
+
+
+
+
+
+#text_land{
+
+	width: 100%;
+	margin: 0 auto;
+	min-height: 200px; 
+	max-height: 250px;
+	margin-top: 10px;  
+	padding: 10px; 
+	
+
+}
+
+
+
+
+
+#form_land{
+
+
+	width: 100%;
+	margin: 0 auto;
+	height: 300px; 
+	padding: 5px; 
+	
+}
+
+
+
+ul#social_buttons{
+
+	width: 100%; 
+	margin: 0 auto;
+
+}
+
+
+
+ul#social_buttons{
+
+	text-align: center;
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
