@@ -1,3 +1,5 @@
+
+//call iniMap onload
 window.onload = function() {
   initMap();
 };
@@ -17,10 +19,8 @@ window.onload = function() {
 
 
 
-      
+//get all the sub categories of the main gaps by id 
 function show_sub_categories(id){
-
-  
 var data = {'id':id};
 
        $.ajax({
@@ -47,7 +47,7 @@ var data = {'id':id};
 
 
 
-
+//volunteer sign up form ajax
       function volunteer(){
 
           //var data = { 'id': id , 'name': name};
@@ -93,7 +93,7 @@ var data = {'id':id};
 
 
 
-
+//newsletter sign ajax call
       function newsletter(){
 
           //var data = { 'id': id , 'name': name};
@@ -133,7 +133,7 @@ var data = {'id':id};
 
 
 
-
+//category by id
 function sub_cat_by_id(id){
 var data = { 'id':id }
 
@@ -161,7 +161,7 @@ var data = { 'id':id }
 
 
 
-
+//select intiatives
 function picInitiative(){
 
 
@@ -198,7 +198,7 @@ function picInitiative(){
 
 
 
-        /* side bar menu */
+ /* side bar menu */
         //side bar 
         $("#menu-toggle").click(function(e){
           e.preventDefault();
@@ -226,7 +226,7 @@ function picInitiative(){
 
 
 
-        /* login popup */
+ /* login popup */
         $(document).ready(function(){
 
 
@@ -247,7 +247,7 @@ function picInitiative(){
 
 
 
-
+//login button nolonger needed but don't erase
             $('a#login_button').webuiPopover({
 
 
@@ -268,7 +268,7 @@ function picInitiative(){
 
 
           
-
+//login join form pop
           $('a#join_button').webuiPopover({
 
 
