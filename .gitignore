@@ -7,7 +7,6 @@ assets/
 classes/
 functions/
 gaps/
-home/
 includes/
 logs/
 ltgfamily/
@@ -18,3 +17,7 @@ scripts/
 shop/
 initiatives/index.php
 initiatives/index_land.php
+home/index.php
+home/index_land.php
+
+
