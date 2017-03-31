@@ -1,0 +1,16 @@
+.*php
+account/
+assets/
+classes/
+functions/
+gaps/
+home/
+includes/
+logs/
+ltgfamily/
+maintenance/
+marketplace/
+profile/
+scripts/
+server_settings/
+
