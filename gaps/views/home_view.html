@@ -1,0 +1,476 @@
+
+<div class="row">
+
+    <div class="col-xs-12 col-md-12" id="banner_gaps">
+
+    	<div class="banner_gaps">
+
+
+    	</div>
+
+    
+
+    </div>
+
+</div><!--row-->
+
+
+
+
+
+
+<div class="container" id="home">
+
+
+
+		<div class="col-lg-10 col-centered"> 
+		<form role="search">
+        <div class="input-group">
+            <input type="text" class="form-control" placeholder="Search LtG GAPS" name="srch-term" id="srch-term">
+            <div class="input-group-btn">
+                <button class="btn btn-default" type="submit"><i class="glyphicon glyphicon-search"></i></button>
+            </div>
+        </div>
+        </form>
+
+<hr />
+
+
+
+    <div style="min-height: 300px; " class="row">
+
+
+   <p class="lead"> What is a GAP? </p>
+   <div id="error"> </div>
+
+          <!--left menu--> 
+            <div class="col-sm-6">
+                 <div class="list-group">
+                 <?php while ($row_left = mysqli_fetch_array($left_menu, MYSQLI_ASSOC)) { ?>
+                    <button type="button" class="list-group-item menu_gap_left" onclick="sub_cat_by_id(id=<?php echo  $row_left['gap_id']; ?>)">
+                        <?php 
+                          echo strtoupper($row_left['gap']);
+                        ?>
+                    </button>
+                    
+                      <?php 
+                      }
+                  ?>
+                </div>
+            </div>
+        <!--left menu--> 
+
+
+
+
+
+       <!--right menu--> 
+          <div class="col-sm-6">
+              <div style="float: right;" class="list-group menu_gap_right">
+              <?php while ($row_right = mysqli_fetch_array($right_menu, MYSQLI_ASSOC)) { ?>
+                     <button style="text-align: right;" type="button" class="list-group-item">
+                    <!--<span class="badge">14</span>-->
+                      <?php 
+                        echo  strtoupper($row_right['gap']);
+                      ?>
+                     </button>
+                  <?php
+                  }
+
+                ?>
+              </div>
+            </div>
+        <!--right menu-->
+
+
+
+
+    </div>
+
+
+<hr />
+
+
+<p class="lead">
+WE ARE PROUD TO BE YOUSER-GENERATED...IT'S UP TO YOU TO LINKTHEGAP!
+</p>
+
+    
+            
+        <div id="add_gap_info"> 
+                <a class="btn btn-link" role="button" data-toggle="collapse" href="#collapseExample" aria-expanded="false" aria-controls="collapseExample">
+
+                ADD GAP INFORMATION TO OUR COLLECTIVE KNOWLEDGE BASE
+                 
+                </a>
+
+                <div class="collapse" id="collapseExample">
+                  
+                  
+<!-- quick facts -->
+<button type="button" class="btn btn-primary" data-toggle="modal" data-target=".quickfacts">Quick Facts</button>
+
+<div class="modal fade quickfacts" tabindex="-1" role="dialog" aria-labelledby="quickfacts">
+  <div class="modal-dialog modal-lg" role="document">
+    <div class="modal-content">
+                       
+
+                       <!--header-->
+                        <div class="modal-header">
+                            <button type="button" class="close" data-dismiss="modal">&times; </button>
+                          
+                            <p class="lead"> Post Quick Facts </p>
+
+                        </div>
+
+
+                          <!--body-->
+                           <div class="modal-body">
+
+                            <!--
+                               <form class="form-inline">
+
+                                <div class="form-group">
+                                <label for="exampleInputName2">gap</label>
+                                <select class="form-control">
+                                  <option>adfadfadf</option>
+                                  <option>adfadfadf</option>
+                                  <option>adfadfadf</option>
+                                  <option>adfadfadf</option>
+                                  <option>adfadfadf</option>
+                                </select>
+                                </div>
+
+                              
+                                <div class="form-group">
+                                <label for="exampleInputName2">between</label>
+                                <select class="form-control">
+                                  <option>1</option>
+                                  <option>2</option>
+                                  <option>3</option>
+                                  <option>4</option>
+                                  <option>5</option>
+                                </select>
+                                </div>
+
+
+
+
+                                <div class="form-group">
+                                <label for="exampleInputName2">and</label>
+                                <select class="form-control">
+                                  <option>1</option>
+                                  <option>2</option>
+                                  <option>3</option>
+                                  <option>4</option>
+                                  <option>5</option>
+                                </select>
+                                </div>
+                                </form>
+                            -->
+
+                        
+                            <textarea id="summernote"></textarea>
+
+
+                      
+
+
+
+                           <p>
+                           <input type="text" class="form-control" placeholder="Your Source here...">
+                           </p>
+                        
+
+
+                          </div>
+
+                         
+
+
+                          <!--footer-->
+                          <div class="modal-footer"> 
+
+                           <button type="button" class="btn btn-primary">Post Quick Facts</button>
+                           <!--
+                           <button type="button" class="close" data-dismiss="modal">close</button>
+                           -->
+
+
+
+                          </div>
+
+                        </div>
+        
+  </div>
+</div> &nbsp; &nbsp; 
+
+
+
+
+
+
+
+
+
+
+<!-- First-Hand Stories -->
+<button type="button" class="btn btn-primary" data-toggle="modal" data-target=".first_hand_stories">First-Hand Stories</button>
+
+<div class="modal fade first_hand_stories" tabindex="-1" role="dialog" aria-labelledby="firsthandstories">
+  <div class="modal-dialog modal-lg" role="document">
+    <div class="modal-content">
+                       
+
+                           <!--header-->
+                            <div class="modal-header">
+                                <button type="button" class="close" data-dismiss="modal">&times; </button>
+                              
+
+                              <p class="lead"> Post First-Hand Stories </p>
+                            </div>
+
+
+                               <form>
+
+                      <!--body-->
+                       <div class="modal-body">
+
+
+                        <label for="story">Your first-hand story</label>
+                        <textarea id="summernote2"></textarea>
+
+
+                          <label for="ideas"> Ideas for Change or questions for Users to ponder (optional) </label>
+                        <textarea id="summernote4"></textarea>
+
+
+
+                          
+                          <div id="myId" class="dropzone">
+                          <label for="picture">This picture will be at the top of your story posting (optional)</label>
+
+                          <h1><i class="fa fa-cloud-upload" aria-hidden="true"></i></h1>
+                            <h2>Drag and Drop file here</h2>
+                          </div>
+
+
+                          </div>
+                              
+                                                       
+
+                          </form>
+
+                          <!--footer-->
+                          <div class="modal-footer"> 
+
+                          <button type="button" class="btn btn-primary">Post First-Hand Stories</button>
+                            <!--<button type="button" class="close" data-dismiss="modal">close</button>-->
+
+
+                          </div>
+
+                        </div>
+        
+  </div>
+</div> &nbsp; &nbsp; 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<!-- Research-based stories -->
+    <button type="button" class="btn btn-primary" data-toggle="modal" data-target=".research_based_stories">Research-based stories</button>
+
+            <div class="modal fade research_based_stories" tabindex="-1" role="dialog" aria-labelledby="esearchbasedstories">
+              <div class="modal-dialog modal-lg" role="document">
+                <div class="modal-content">
+
+                
+               
+
+                   <!--header-->
+                    <div class="modal-header">
+                        <button type="button" class="close" data-dismiss="modal">&times; </button>
+                      
+
+                        <p class="lead"> Post Research-based stories </p>
+
+                    </div>
+
+                    <!--body-->
+                    <div class="modal-body">
+
+                     <p>
+                     <label for="title">Research Title</label>
+                     <input type="text" class="form-control" placeholder="Your research title">
+                     </p>
+                    
+
+                    <p>
+                     <label for="research-story">Your research-based story</label>
+                     <textarea id="summernote3"></textarea>
+                    </p>
+
+
+                     <p>
+                     <label for="research-story">Ideas for change & Questions for users to ponder</label>
+                     <textarea id="summernote5"></textarea>
+                    </p>
+
+
+                      <p>
+                     <input type="text" class="form-control" placeholder="Your Source here...">
+                     </p>
+
+
+                      <div id="myId" class="dropzone">
+                      <label for="picture">This picture will be at the top of your research posting (optional)</label>
+
+                      <h1><i class="fa fa-cloud-upload" aria-hidden="true"></i></h1>
+                        <h2>Drag and Drop file here</h2>
+                      </div>
+                    
+
+                  </div>
+
+                     <!--footer-->
+                        <div class="modal-footer"> 
+
+                        <!--<button type="button" class="close" data-dismiss="modal">close</button>-->
+
+                        <button type="button" class="btn btn-primary">Post Research-based stories </button>
+
+                    </div>
+
+                </div>
+                    
+              </div>
+            </div>&nbsp;  &nbsp;     
+                                      
+                                  
+
+
+     </div>
+</div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+        </div>
+        <!--container --> 
+
+
+       
+
+
+</div><!--home container-->
