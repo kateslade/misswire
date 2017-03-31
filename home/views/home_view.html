@@ -1,70 +1,50 @@
+
+<!--top banner image-->
 <div class="row">
-
     <div class="col-xs-12 col-md-12" id="banner_home">
-
       <div class="banner_home"> 
-
-
-      </div>
-
-    </div>
+    
+     </div>
+   </div>
+<!--top banner image-->
 
 
 
 </div><!--row-->
 
 
-
-
-
-
+<!--home container-->
 <div class="container" id="home">
-
-
-
-
-
-
-
-
-
-
-
 <div class="row">
-
+    
+    
+      <!--home intro text-->
       <div class="col-xs-6  col-md-6" id="intro_top">
-
         <h1 class="display-4"> Learn, Connect, Change </h1>
-
-     
-
       </div>
+     <!--home intro text-->
+    
+    
 
-
-
-
-
-
+      <!--all the users-->
       <div class="col-xs-6 col-md-6" id="users_home">
-      
-          
-      
        <?php while ($row = mysqli_fetch_array($r, MYSQLI_ASSOC)) { // Fetch each item.
-              
-                // Print the item within some HTML:
+
+                // Print the users within some HTML:
                 echo  $row['first_name'].' '.$row['last_name']. ' '.'('.$row['username'].')'.'<br />'; 
- 
-        }?> 
-
-
+        }?>
       </div>
+     <!--all the users-->
+    
+    
 
 </div>
 
 
 
 
-
+<!--don't worry about this code codenry is till working on it-->
+    
 <!--
 <div class="row">
 
@@ -151,6 +131,7 @@
 
 </div>
 -->
+<!--don't worry about this code codenry is till working on it-->
 
 
 
