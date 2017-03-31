@@ -1,4 +1,7 @@
-.*php
+fullpath.php
+index.php
+utilities.inc.php
+mysqli_connect.php
 account/
 assets/
 classes/
@@ -12,5 +15,6 @@ maintenance/
 marketplace/
 profile/
 scripts/
-server_settings/
-
+shop/
+initiatives/index.php
+initiatives/index_land.php
