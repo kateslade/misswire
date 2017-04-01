@@ -1,0 +1,34 @@
+<?php 
+// Loop through the results:
+include ('../functions/product_functions.inc.php');
+
+while ($row = mysqli_fetch_array($r, MYSQLI_ASSOC)) {
+?>
+<div class="container" id="home">
+<div class="col-lg-10 col-centered"> 	             
+<?php 
+	echo '<h3>' . $row['name'] . '</h3>
+  	<div class="img-box">
+     	<p><img alt="' . $row['name'] . '" src="/products/' . $row['image']  . '" /><br />' . $row['description'] . '<br />
+		<strong>Price:</strong> $' . $row['price'] . '<br />		
+		<strong>Availability:</strong> ' . $row['stock'] . '<br />
+		<strong>shop:</strong> ' . $row['shop_name'] . '</p>
+    	<p>
+
+    	<form method="get" action="cart.php"> 
+    	<input type="hidden" name="sku" value="' . $row['sku'] .'">
+    	<input type="hidden" name="action" value="add">
+    	<input type="hidden" name="shop_id" value="'.$row['shop_id'].'">
+    	<input type="submit" value="Add to basket" class="btn btn-link">
+    	</form>
+
+    	<!--
+    	<p>
+    	<a href="'.BASE_URL.'marketplace/cart.php?sku=' . $row['sku'] . '&action=add&shop_id='.$row['shop_id'].'" class="button">Add to Cart</a>
+    	</p>
+    	-->
+
+    	</div>';
+} // End of WHILE loop. 
+?>       
+</div>

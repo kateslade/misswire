@@ -1,0 +1,96 @@
+<div class="container" id="home">
+<div class="col-lg-10 col-centered"> 
+
+<!--<div align="center"><img src="/images/checkout_indicator2.png" /></div>-->
+
+<div id="login">
+
+
+<?php // Display the cart:
+include ('./views/checkout_cart.html');
+?> 
+
+<div class="box alt">
+	<div class="left-top-corner">
+   	<div class="right-top-corner">
+      	<div class="border-top"></div>
+      </div>
+   </div>
+   <div class="border-left">
+   	<div class="border-right">
+       	<div class="inner">
+
+		<p class="lead">Your Billing Information</p>
+	
+		<?php if (isset($message)) echo "<p class=\"error\">$message</p>"; ?>	
+
+
+
+<form action="billing.php" method="POST" id="billing_form">
+		<?php // Need the form function:
+		include ('../functions/form_functions.inc.php');
+		?>
+
+
+
+	<fieldset>
+	<!--
+	<div class="field"><label for="cc_number"><strong>Card Number</strong></label><br /><?php create_form_input('cc_number', 'text', $billing_errors, 'POST', 'autocomplete="off"'); ?></div>
+
+	<div class="field"><label for="exp_date"><strong>Expiration Date</strong></label><br /><?php create_form_input('cc_exp_month', 'select', $billing_errors); ?><?php create_form_input('cc_exp_year', 'select', $billing_errors); ?></div>
+
+	<div class="field"><label for="cc_cvv"><strong>CVV</strong></label><br /><?php create_form_input('cc_cvv', 'text', $billing_errors, 'POST', 'autocomplete="off"'); ?></div>
+	-->
+
+	<p> Shop accepted motheds of payment </p>
+   	<input type="radio" name="payment" id="payment" value="1">Visa
+   	<input type="radio" name="payment" id="payment" value="1">MasterCard
+   	<input type="radio" name="payment" id="payment" value="1">American Express
+   		
+    <hr />
+
+	<div class="field"><label for="cc_first_name"><strong>First Name </strong></label><br /><?php create_form_input('cc_first_name', 'text', $billing_errors, $values); ?></div>
+	
+	<div class="field"><label for="cc_last_name"><strong>Last Name </strong></label><br /><?php create_form_input('cc_last_name', 'text', $billing_errors, $values); ?></div>
+	
+	<div class="field"><label for="cc_address"><strong>Street Address </strong></label><br /><?php create_form_input('cc_address', 'text', $billing_errors, $values); ?></div>
+
+
+	<div class="field"><label for="cc_city"><strong>City </strong></label><br /><?php create_form_input('cc_city', 'text', $billing_errors, $values); ?></div>
+
+
+	<div class="field"><label for="cc_country"><strong>country</strong></label><br /><?php create_form_input('cc_country', 'text', $billing_errors, $values); ?></div>
+
+	<!--
+	<div class="field"><label for="cc_state"><strong>State </strong></label><br /><?php create_form_input('cc_state', 'select', $billing_errors, $values); ?></div>
+	
+
+	<div class="field"><label for="cc_zip"><strong>Zip Code </strong></label><br /><?php create_form_input('cc_zip', 'text', $billing_errors, $values); ?></div>
+	-->
+	
+	<br clear="all" />
+	
+<div align="center" id="submit_div"><input type="submit" value="Place Order" class="btn btn-primary  btn-lg btn-block" /></div></fieldset></form>
+<p class="lead">By clicking this button, your order will be completed.</p>
+</div>
+      </div>
+   </div>
+   <div class="left-bot-corner">
+   	<div class="right-bot-corner">
+      	<div class="border-bot"></div>
+      </div>
+   </div>
+</div>
+<!-- box end -->
+</div>
+</div>
+
+
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.4.2/jquery.min.js" type="text/javascript" charset="utf-8"></script>
+<script type="text/javascript" charset="utf-8">
+	$('#billing_form').submit(function(){
+	    $('input[type=submit]', this).attr('disabled', 'disabled');
+		$('#submit_div').html('<p class="button">Processing...</p>');
+	});
+
+</script>

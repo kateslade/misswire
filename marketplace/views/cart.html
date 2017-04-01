@@ -1,0 +1,241 @@
+<div class="container" id="home">
+<div class="row">
+ <div class="col-lg-10 col-centered"> 
+
+ 			 
+			<h2 style="text-align: center;"> <i class="fa fa-shopping-basket" aria-hidden="true"></i> Your Shopping Basket</h2>
+		
+			 <div class="alert alert-info alert-dismissible fade in" role="alert">
+             <button type="button" class="close" data-dismiss="alert" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+
+			<p>Please use this form to update your shopping cart. You may change the quantities, move items to your hearts library for future purchasing, or remove items entirely. The shipping and handling cost is based upon the order total. When you are ready to complete your purchase, please click Checkout to be taken to a secure page for processing.</p>
+			</div>
+
+
+
+<div id="login">
+<form action="<?php echo BASE_URL; ?>marketplace/cart.php" method="POST">
+				
+
+				<table class="table">
+					<tr>
+						<th align="center">Item</th>
+						<th align="center">Quantity</th>
+						<th align="right">Price</th>
+						<th align="right">Subtotal</th>
+						<th style="text-align: right;">Options</th>
+					</tr>
+<?php // Display the products:
+
+
+
+
+// Initialize the total:
+$total = 0;
+
+// Fetch each product:
+while ($row = mysqli_fetch_array($r, MYSQLI_ASSOC)) {
+	
+
+
+	// Get the correct price:
+	$price = $row['price'];
+	
+	// Calculate the subtotal:
+	$subtotal = $price * $row['quantity'];
+
+
+	
+	// Print out a table row:
+	echo '<tr><td>' . $row['name'] . '</td>
+		<td>
+		<div class="form-group form-group-lg">
+		<input style="width: 60px; text-align: center;" class="form-control" type="text" name="quantity[' .'C'.$row['creation_id'] . ']" value="' . $row['quantity'] . '" size="3" />
+		</div>
+		</td>
+
+		<td>$' . $price . '</td>
+		<td>$' . number_format($subtotal, 2) . '</td>
+
+
+   <td style="text-align: right;">
+
+   <!--
+	<a class="btn btn-link" href="'.BASE_URL.'marketplace/wishlist.php?sku=' .'C'.$row['creation_id'] . '&action=move&qty=' . $row['quantity'] .'"> <i class="fa fa-heart-o" aria-hidden="true"></i> Heart</a>
+	-->
+	
+		<a class="btn btn-link" href="'.BASE_URL.'marketplace/cart.php?sku=' .'C'.$row['creation_id'] . '&action=remove"><span class="glyphicon glyphicon-trash" aria-hidden="true"></span> Remove</a>
+		</td>
+	</tr>
+	';
+	
+
+
+
+	/*
+	// Check the stock status:
+	if ($row['stock'] < $row['quantity']) {
+		echo '<tr class="error"><td colspan="5" align="center">There are only ' . $row['stock'] . ' left in stock of the ' . $row['name'] . '. Please update the quantity or remove the item entirely. </td></tr>';
+	}
+	*/
+
+
+
+	// Add the subtotal to the total:
+  	$total += $subtotal;
+
+} // End of WHILE loop. 
+
+
+
+
+
+//Total (not including shipping & handling and applicable taxes): 
+
+// Add the shipping:
+//$shipping = get_shipping($total);
+$shipping = 0; 
+$total += $shipping;
+
+echo '<tr>
+	<td colspan="3" align="right"><strong>Shipping &amp; Handling</strong></td>
+	<td align="right"> shipping & handing not inclusive  </td>
+	<td>&nbsp;</td>
+</tr>
+';
+
+// Display the total:
+echo '<tr>
+	<td colspan="3" align="right"><strong>Total</strong></td>
+	<td align="right">$' . number_format($total, 2) . '</td>
+	<td>&nbsp;</td>
+</tr>
+';
+
+
+// Display the initiative:
+/*
+echo '<tr>
+	<td colspan="3" align="right"><strong>Initiative</strong></td>
+	<td align="right">  </td>
+	<td>&nbsp;</td>
+</tr>
+';
+*/
+?>
+</table>
+
+<p>
+
+<input  style="float: right;" type="submit" value="Update Quantities" class="btn btn-primary" />
+
+
+ <a href="<?php echo BASE_URL;  ?>marketplace/" style="float: left;" type="button" class="btn btn-primary"> continue shopping </a>
+
+</form>
+
+</p>
+
+
+
+
+
+
+
+<!-- Button trigger modal -->
+<p align="center">
+<button type="button" class="btn btn-primary" data-toggle="modal" data-target="#myModal">
+ pick an initiative to support then procceed to check out
+</button>
+</p>
+
+
+
+<button class="btn btn-primary  btn-lg btn-block checkout_link" disabled="disabled">Checkout</button>
+
+	<form method="get" action="checkout.php"> 
+	<!--<span class="initiative_selected"> </span>-->
+	<input type="hidden" name="session" value="<?php echo $uid; ?>">
+	<input type="submit" value="Check out" class="btn btn-primary  btn-lg btn-block checkout_enable">
+	</form>
+
+<!--
+<a href="<?php echo BASE_URL; ?>marketplace/checkout.php?session=<?php echo $uid; ?>" class="btn btn-primary  btn-lg btn-block checkout_enable" >Checkout</a>
+-->
+
+</div>
+
+
+
+  
+
+<!-- Large modal -->
+<div class="modal fade bs-example-modal-lg" id="myModal" tabindex="-1" role="dialog" aria-labelledby="myLargeModalLabel">
+  <div class="modal-dialog modal-lg" role="document">
+    <div class="modal-content">
+
+        <!--header-->
+           <div class="modal-header">
+              <button type="button" class="close" data-dismiss="modal">&times; </button>
+                  <h2> pick ltg initiative to support </h2>
+              </div>
+
+                <div class="modal-body">
+
+
+                <p class="lead"> The first step is for you to pick an one of the three Initiatives that the vendor supports.</p>
+
+
+	         <ul class="list-inline">
+	         
+	       
+
+	        <?php 
+	        // Fetch each product:
+			while ($row_ini = mysqli_fetch_array($s, MYSQLI_ASSOC)) {
+			 ?>
+			 <li>
+			 <input type="radio" name="initiative" id="initiative" value="<?php echo $row_ini['init_id']; ?>" onchange="picInitiative();"><?php echo $row_ini['init_name']; ?></input>
+			 </li>
+			 <?php 
+			 }
+	
+			?>
+			 </ul>
+	   
+	     </div>
+       
+        
+        <div class="modal-footer">
+        <button type="button" class="btn btn-primary" data-dismiss="modal">continue</button>
+        <!--<button type="button" class="btn btn-primary">continue</button>-->
+      </div>
+    
+
+    </div>
+  </div>
+</div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+</div>
+
+</div><!--home container-->
+
+
+
+
+

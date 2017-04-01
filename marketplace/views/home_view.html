@@ -1,0 +1,50 @@
+
+
+<div class="row">
+
+    <div class="col-xs-12 col-md-12" id="banner_marketplace">
+
+      <div class="banner_marketplace">
+
+      </div>
+
+    
+
+    </div>
+
+</div><!--row-->
+
+
+<div class="container" id="home">
+
+  
+
+    <div class="col-lg-12 col-centered"> 
+
+      <a href="<?php echo BASE_URL; ?>marketplace/cart.php?shop_id=1"> cart </a> 
+   
+          	<ul class="items-list">
+              <?php while ($row = mysqli_fetch_array($r, MYSQLI_ASSOC)) { // Fetch each item.
+              
+              	// Print the item within some HTML:
+
+                ?>
+                   <li><a style="cursor: pointer;" onclick="show_sub_categories(id=<?php echo $row['cat_id']; ?>)"><?php echo $row['category'];?></a> </li>
+
+                <?php 
+
+              }?> 
+            </ul>
+
+
+            <div id="errors_sub_cat"> 
+            </div>
+
+            
+
+
+    </div>
+
+
+
+</div><!--home container-->

@@ -1,0 +1,97 @@
+
+		<h2><i class="fa fa-shopping-basket" aria-hidden="true"></i> Your Shopping Basket</h2>
+				<table class="table">
+					<tr>
+						<th>Item</th>
+						<th>Quantity</th>
+						<th>Price</th>
+						<th>Subtotal</th>
+					</tr>
+<?php // Display the products:
+
+// Need the utility functions:
+include ('../functions/product_functions.inc.php');
+
+// Initialize the total:
+$total = 0;
+
+// For removing problematic items:
+$remove = array();
+
+// Fetch each product:
+while ($row = mysqli_fetch_array($r, MYSQLI_ASSOC)) {
+	
+	// Check the stock status:
+	if ($row['stock'] < $row['quantity']) {
+	
+		echo '<tr class="error"><td colspan="4" align="center">There are only ' . $row['stock'] . ' left in stock of the ' . $row['name'] . '. This item has been removed from your cart and placed in your wish list.</td></tr>';
+	
+		$remove[$row['sku']] = $row['quantity'];
+		
+	} else {
+	
+		// Get the correct price:
+		$price = get_just_price($row['price'];
+
+		// Calculate the subtotal:
+		$subtotal = $price * $row['quantity'];
+
+		// Print out a table row:
+		echo '<tr><td>'. $row['name'] . '</td>
+			<td>' . $row['quantity'] . '</td>
+			<td>$' . $price . '</td>
+			<td>$' . number_format($subtotal, 2) . '</td>
+		</tr>
+		';
+
+		// Add the subtotal to the total:
+	  	$total += $subtotal;
+
+	}
+
+} // End of WHILE loop. 
+
+// Add the shipping:
+$shipping = get_shipping($total);
+$total += $shipping;
+echo '<tr>
+	<td colspan="2"> </td><th align="right">Shipping &amp; Handling</th>
+	<td align="right">$' . $shipping . '</td>
+</tr>
+';
+
+// Store the shipping in the session:
+$_SESSION['shipping'] = $shipping;
+
+// Display the total:
+echo '<tr>
+	<td colspan="2"> </td><th align="right">Total</th>
+	<td align="right">$' . number_format($total, 2) . '</td>
+	<td>&nbsp;</td>
+</tr>
+';
+
+// Remove any problematic items:
+if (!empty($remove)) {
+	
+	// Clear the results:
+	mysqli_next_result($dbc);
+	
+	// Loop through the array:
+	foreach ($remove as $sku => $qty) {
+
+		list($sp_type, $pid) = parse_sku($sku);
+		
+		// Move it to the wish list:
+		$r = mysqli_multi_query($dbc, "CALL add_to_wish_list('$uid', '$sp_type', $pid, $qty);CALL remove_from_cart('$uid', '$sp_type', $pid)");		
+		echo "CALL add_to_wish_list('$uid', '$sp_type', $pid, $qty);CALL remove_from_cart('$uid', '$sp_type', $pid)";
+	} // End of FOREACH loop.
+	
+} // End of $remove IF.
+
+?>         </table>
+
+
+
+
+
