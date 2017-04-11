@@ -14,11 +14,184 @@ Notes: Hand coded for linkthegap
 ul li {
 
 	list-style-type: none;
+
 }
 
 
-/* global styles */
+a.connect_btn{
 
+
+
+}
+
+
+
+
+
+
+#profile_text{
+
+	height: 250px; 
+	width: 600px;
+	float: right; 
+	padding: 25px; 
+	margin-top: 10px; 
+	background-image: url(../../assets/img/backgrounds/hands_bg.png);
+	background-position: center;
+	background-repeat: no-repeat;
+	background-size: 100%;
+
+}
+
+
+
+
+#search_profile{
+
+	width: 500px; float: right;
+	margin-right: 40px; 
+
+}
+
+
+
+#search_profile input{
+
+	background: transparent;
+}
+
+
+
+.profile{
+	height: 300px;
+}
+
+
+.top_profile{
+
+	height: 35px; 
+	padding: 10px; 
+	text-align: center;
+
+}
+
+
+
+
+
+
+
+
+
+ul.min_profile_user{
+
+width: 390px; 
+margin: 0 auto;
+height: 20px; 
+padding: 10px; 
+text-align: center;
+margin-top: -15px;
+}
+
+
+ul.min_profile_user li{
+
+list-style-type: none; 
+display: inline-block;
+text-align: center;
+
+
+}
+
+
+
+
+
+img.user_min_image{
+
+
+	width: 100px;
+	height: 100px;
+
+	 -webkit-border-radius: 100px;
+    -webkit-background-clip: padding-box;
+    -moz-border-radius: 100px;
+    -moz-background-clip: padding;
+    border-radius: 100px;
+    background-clip: padding-box;
+    //-webkit-filter: grayscale(100%);
+    //filter: grayscale(100%);
+    border: 1px solid #ccc; 
+
+}
+
+#user_min_profile{
+
+	position: fixed;
+	display: none;
+	width: 440px;
+	height: 160px;
+	//border: 1px solid #000;
+	z-index: 10;
+	//border: 2px solid #fff;
+	border-radius: 10px;
+    //box-shadow: 0 0 7px #000;
+    background-color: transparent;
+    padding: 10px;
+    opacity: 0.9;
+
+
+	//background-image: url(../images/backgrounds/hands_bg.png);
+	//background-position: center;
+	  //background-repeat: no-repeat;
+	  //background-size: 100%;
+
+}
+
+
+
+#users_family {
+
+  display: block;
+  margin: 0 auto;
+  width: 100%;
+  height: 700px;
+  padding-top: 10px; 
+  //border: 1px solid #ccc;
+  //background-color: #eee;
+
+}
+
+
+/*pop up sub gaps css */
+.pop_sub_gaps{
+
+	width: 100%; 
+	margin: 0 auto;
+	box-shadow: none;
+
+}
+
+
+ul.pop_sub_gaps li{
+
+	border: none;
+}
+
+
+
+
+
+
+/* google capture */ 
+.g-recaptcha{
+
+	margin-left: 30px; 
+}
+
+
+
+/* global styles */
 
 #add_gap_info
 {
@@ -383,6 +556,20 @@ ul.menu_logged_in li i{
     font-weight: bold;
 }
 
+
+ul.stop_go_family{
+	margin: 0 auto;
+}
+
+
+
+
+#ltg_family_center{
+
+	width: 90%; 
+	margin: 0 auto;
+	margin-left: 40px; 
+}
 
 
 

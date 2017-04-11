@@ -41,17 +41,26 @@
 
 
    <p class="lead"> What is a GAP? </p>
-   <div id="error"> </div>
+
+
+  
 
           <!--left menu--> 
             <div class="col-sm-6">
                  <div class="list-group">
                  <?php while ($row_left = mysqli_fetch_array($left_menu, MYSQLI_ASSOC)) { ?>
-                    <button type="button" class="list-group-item menu_gap_left" onclick="sub_cat_by_id(id=<?php echo  $row_left['gap_id']; ?>)">
+                     <button type="button" class="list-group-item menu_gap_left" onclick="sub_cat_by_id(id=<?php echo  $row_left['gap_id']; ?>)">
                         <?php 
                           echo strtoupper($row_left['gap']);
                         ?>
-                    </button>
+                      </button>
+
+                       <div class="webui-popover-content">
+                          <div id="error_<?php echo $row_left['gap_id']; ?>"> 
+
+
+                          </div>
+                       </div>
                     
                       <?php 
                       }
@@ -66,14 +75,21 @@
 
        <!--right menu--> 
           <div class="col-sm-6">
-              <div style="float: right;" class="list-group menu_gap_right">
+              <div style="float: right;" class="list-group">
               <?php while ($row_right = mysqli_fetch_array($right_menu, MYSQLI_ASSOC)) { ?>
-                     <button style="text-align: right;" type="button" class="list-group-item">
+                     <button style="text-align: right;" type="button" class="list-group-item menu_gap_right" onclick="sub_cat_by_id(id=<?php echo  $row_right['gap_id']; ?>)">
                     <!--<span class="badge">14</span>-->
                       <?php 
                         echo  strtoupper($row_right['gap']);
                       ?>
                      </button>
+
+                      <div class="webui-popover-content">
+                          <div id="error_<?php echo $row_right['gap_id']; ?>"> 
+
+
+                          </div>
+                       </div>
                   <?php
                   }
 

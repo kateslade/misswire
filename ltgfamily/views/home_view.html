@@ -21,9 +21,9 @@
 
 <div class="container" id="home">
 
+<div id="ltg_family_center"> 
 
-    <div class="col-lg-10 col-centered"> 
-    <form role="search">
+        <form role="search">
         <div class="input-group">
             <input type="text" class="form-control" placeholder="Search LtG family" name="srch-term" id="srch-term">
             <div class="input-group-btn">
@@ -33,18 +33,89 @@
         </form>
 
 
+<div id='users_family'>
+
+    <ul class="stop_go_family">
+
+      <li style="float: left;"> <a  class="button stop_family" >stop  </a> </li>
+
+      <li style="float: right;"> <a class="button go_family"> start  </a> </li>
+
+    </ul>
+
+
+
+  <div id="user_min_profile"> </div>
 
         <?php while ($row = mysqli_fetch_array($r, MYSQLI_ASSOC)) { // Fetch each item.
-              
-                // Print the item within some HTML:
-                echo  $row['first_name'].' '.$row['last_name']. ' '.'('.$row['username'].')'.'<br />'; 
- 
-        }?> 
+           
+          if (isset($_SESSION['user_id']) && $_SESSION['user_id'] == $row['user_id'] ) {
+
+                  //onmouseout="hoverdiv(event,'user_min_profile')"
+
+                          ?>
+                           <div style="
+
+                            width: 5px;
+                            height: 5px;
+                            min-width: 5px;
+                            min-height: 5px;
+                            background: #FFFF0A;
+                            border-radius: 50%;
+                            padding: 10px;
+                            text-align: center;
+                            position: absolute;
+                            border: 5px solid #ccc;
+                            opacity: 0.8;
+                            cursor: pointer;
+
+                             " class='latestblock'   onmouseover="get_user_details(user_id=<?php echo $row['user_id']?>); hoverdiv(event,'user_min_profile');">
+
+                            </div>
+
+
+                            <?php
 
 
 
+                  }
 
-        </div>
+
+                    ?>
+
+                           <div style="
+
+                            width: 5px;
+                            height: 5px;
+                            min-width: 5px;
+                            min-height: 5px;
+                            background:  blue;
+                            border-radius: 50%;
+                            padding: 10px;
+                            text-align: center;
+                            position: absolute;
+                            border: 5px solid #ccc;
+                            opacity: 0.8;
+                            cursor: pointer;
+
+                            " class='latestblock'   onmouseover="get_user_details(user_id=<?php echo $row['user_id']?>); hoverdiv(event,'user_min_profile');">
+
+
+                            </div>
+
+
+                    <?php
+
+
+
+                 }//end while
+
+
+          ?>
+</div>
+
+
+</div>
 
 
 
@@ -58,3 +129,4 @@
 
 
 </div><!--home container-->
+

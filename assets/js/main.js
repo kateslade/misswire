@@ -1,5 +1,3 @@
-
-//call iniMap onload
 window.onload = function() {
   initMap();
 };
@@ -19,8 +17,10 @@ window.onload = function() {
 
 
 
-//get all the sub categories of the main gaps by id 
+      
 function show_sub_categories(id){
+
+  
 var data = {'id':id};
 
        $.ajax({
@@ -44,10 +44,44 @@ var data = {'id':id};
 
 
 
+function get_user_details(user_id){
+
+
+  if(window.XMLHttpRequest)
+   {
+     
+    xmlhttp = new XMLHttpRequest(); 
+         
+    
+       }  else {
+         
+         xmlhttp = new ActiveXObject('Microsoft.XMLHttp');
+         
+       }  
+       xmlhttp.onreadystatechange = function() {
+         
+       if (xmlhttp.readyState == 4 && xmlhttp.status == 200 ) {
+         
+         //response('<h1>'+xmlhttp.responseText+'</h1>');
+
+        document.getElementById("user_min_profile").innerHTML = xmlhttp.responseText; 
+       }
+       
+      }
+      
+  parameters = 'user_id='+user_id;
+  
+  xmlhttp.open('POST', '../scripts/get_user_details.php', true);
+  xmlhttp.setRequestHeader('Content-type', 'application/x-www-form-urlencoded');
+  xmlhttp.send(parameters);
+
+}
 
 
 
-//volunteer sign up form ajax
+
+
+
       function volunteer(){
 
           //var data = { 'id': id , 'name': name};
@@ -93,7 +127,7 @@ var data = {'id':id};
 
 
 
-//newsletter sign ajax call
+
       function newsletter(){
 
           //var data = { 'id': id , 'name': name};
@@ -133,8 +167,9 @@ var data = {'id':id};
 
 
 
-//category by id
+
 function sub_cat_by_id(id){
+
 var data = { 'id':id }
 
      $.ajax({
@@ -143,9 +178,18 @@ var data = { 'id':id }
          async: true,
          cache: false,
          data: data, // all data will be passed here
-         
-          success: function(data){
-           $('#error').html(data);
+          beforeSend: function() {
+               $('#loadingmessage').show();
+            },
+            complete: function(){
+               $('#loadingmessage').hide();
+
+               $("#email_newsletter").val('');
+                
+            },
+           success: function(data){
+
+           $('#error_'+id+'').html(data);
             // alert(data) // The data that is echoed from the ajax.php
          }
 
@@ -161,7 +205,7 @@ var data = { 'id':id }
 
 
 
-//select intiatives
+
 function picInitiative(){
 
 
@@ -198,18 +242,26 @@ function picInitiative(){
 
 
 
- /* side bar menu */
+        /* side bar menu */
         //side bar 
         $("#menu-toggle").click(function(e){
           e.preventDefault();
           $("#wrapper").toggleClass("menuDisplayed").fadeIn();
         });
 
+
+
+
          $(document).ready(function(){
 
+        $("#wrapper").toggleClass("menuDisplayed").fadeIn();
+
+
+      
           $('#content_area').load($(".menu_sidebar:first").attr('href'));
  
          });
+
 
         //loading content page.
         $(".menu_sidebar").click(function(){
@@ -226,7 +278,7 @@ function picInitiative(){
 
 
 
- /* login popup */
+  /* query */
         $(document).ready(function(){
 
 
@@ -247,7 +299,7 @@ function picInitiative(){
 
 
 
-//login button nolonger needed but don't erase
+
             $('a#login_button').webuiPopover({
 
 
@@ -268,7 +320,7 @@ function picInitiative(){
 
 
           
-//login join form pop
+
           $('a#join_button').webuiPopover({
 
 
@@ -309,11 +361,9 @@ function picInitiative(){
 
 
         $('.menu_gap_left').webuiPopover({
-                
 
               trigger:'click',
               animation:'pop',
-              closeable:true,
               width:441,
               height:450,
               placement:'right',
@@ -327,9 +377,10 @@ function picInitiative(){
 
 
         $('.menu_gap_right').webuiPopover({
+
+
             trigger:'click',
             animation:'pop',
-            closeable:true,
             width:450,
             height:450,
             placement:'left',
@@ -339,9 +390,122 @@ function picInitiative(){
           });
 
 
+});//end jquery
 
 
 
-        });
+      //random animations on the family page
+          function randomFromTo(from, to){
+            return Math.floor(Math.random() * (to - from + 1) + from);
+          }
 
-  
+
+          function moveRandom(obj) {
+            /* get container position and size
+             * -- access method : cPos.top and cPos.left */
+            var cPos = $('#users_family').offset();
+            var cHeight = $('#users_family').height();
+            var cWidth = $('#users_family').width();
+
+           
+
+            // get box padding (assume all padding have same value)
+            var pad = parseInt($('#users_family').css('padding-top').replace('px', ''));
+
+            // get movable box size
+            var bHeight = obj.height();
+            var bWidth = obj.width();
+
+            // set maximum position
+            maxY = cPos.top + cHeight - bHeight - pad;
+            maxX = cPos.left + cWidth - bWidth - pad;
+
+            // set minimum position
+            minY = cPos.top + pad;
+            minX = cPos.left + pad;
+
+            // set new position
+            newY = randomFromTo(minY, maxY);
+            newX = randomFromTo(minX, maxX);
+
+            obj.animate({
+              top: newY,
+              left: newX
+
+            }, 12000, function() {
+                moveRandom(obj);
+            });
+          }
+
+
+      $('.latestblock').each(function() {
+      moveRandom($(this));
+      });
+
+
+
+
+
+      $('a.stop_family').click(function() {
+
+          $('.latestblock').each(function() {
+          $(this).stop();
+
+              });
+      });
+
+
+      $('a.go_family').click(function() {
+
+
+          $('.latestblock').each(function() {
+
+          moveRandom($(this));
+
+          });
+      });
+
+
+
+      $(".latestblock").mouseover(function () {
+
+        $(this).stop();
+
+      });
+
+
+      $('#user_min_profile').mouseleave(function () {
+
+        $(this).fadeOut('slow');
+
+      });
+
+
+
+
+      $(".latestblock").mouseleave(function () {
+
+        moveRandom($(this));
+
+      });
+       
+
+
+
+
+      function hoverdiv(e,divid){
+
+          var left  = e.clientX  + "px";
+          var top  = e.clientY  + "px";
+
+          var div = document.getElementById(divid);
+
+          div.style.left = left;
+          div.style.top = top;
+
+          $("#"+divid).toggle();
+          return false;
+      }
+
+
+

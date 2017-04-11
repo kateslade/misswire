@@ -13,7 +13,6 @@
 
 
 
-<div id="login">
 <form action="<?php echo BASE_URL; ?>marketplace/cart.php" method="POST">
 				
 
@@ -188,9 +187,12 @@ echo '<tr>
 
 	         <ul class="list-inline">
 	         
-	       
-
+	      
 	        <?php 
+
+
+
+
 	        // Fetch each product:
 			while ($row_ini = mysqli_fetch_array($s, MYSQLI_ASSOC)) {
 			 ?>
@@ -209,7 +211,7 @@ echo '<tr>
         <div class="modal-footer">
         <button type="button" class="btn btn-primary" data-dismiss="modal">continue</button>
         <!--<button type="button" class="btn btn-primary">continue</button>-->
-      </div>
+
     
 
     </div>
