@@ -1,0 +1,1111 @@
+
+
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <!-- The above 3 meta tags *must* come first in the head; any other head content must come *after* these tags -->
+    <title>LINKtheGAP</title>
+
+
+  
+    <link href="https://www.linkthegap.com/assets/lib/bootstrap-3.3.7-dist/css/bootstrap.min.css" rel="stylesheet">
+    
+
+      <!-- Latest compiled and minified CSS -->
+      <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
+
+      <!-- Optional theme -->
+      <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap-theme.min.css" integrity="sha384-rHyoN1iRsVXV4nD0JutlnGaslCJuC7uwjduW9SVrLvRYooPp2bWYgmgJQIXwl/Sp" crossorigin="anonymous">
+
+      <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
+
+  
+
+
+    <!-- HTML5 shim and Respond.js for IE8 support of HTML5 elements and media queries -->
+    <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
+    <!--[if lt IE 9]>
+      <script src="https://oss.maxcdn.com/html5shiv/3.7.3/html5shiv.min.js"></script>
+      <script src="https://oss.maxcdn.com/respond/1.4.2/respond.min.js"></script>
+    <![endif]-->
+
+
+    <!--styles-->
+    <link rel="stylesheet" href="https://www.linkthegap.com/assets/lib/webui-popover-master/src/jquery.webui-popover.css">
+
+
+    <!--
+    <link rel="stylesheet" href="https://www.linkthegap.com/assets/lib/font-awesome-4.7.0/css/font-awesome.min.css">
+    -->
+
+
+      <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
+
+      <link href="https://netdna.bootstrapcdn.com/bootstrap/3.3.5/css/bootstrap.css" rel="stylesheet">
+
+      <link href="https://cdnjs.cloudflare.com/ajax/libs/summernote/0.8.1/summernote.css" rel="stylesheet">
+
+ 
+
+
+    <link rel="stylesheet" href="https://www.linkthegap.com/assets/css/responsive.css" >
+
+    <link  rel="stylesheet"  href="https://www.linkthegap.com/assets/css/style.css">
+
+    <link  rel="stylesheet"  href="https://www.linkthegap.com/assets/css/sidebar.css">
+
+      <script type="text/javascript">
+
+
+      
+        
+
+
+      </script>
+
+<!--Miss Wire CSS-->
+
+<style>
+ul.profile_button 
+{
+  padding: 0;
+  margin: 0;
+  width: 100%;
+  text-align: center;
+}
+
+ul.profile_button li
+
+{
+  display: inline;
+  margin-right: 10px;
+}
+
+ul.profile_button li.profile_edit_btn
+{
+  float: right;
+}
+
+
+.focusedInput {
+    border-color: rgba(82,168,236,.8) ;
+    outline: 0;
+    outline: thin dotted \9;
+    -moz-box-shadow: 0 0 8px rgba(82,168,236,.6);
+    box-shadow: 0 0 8px rgba(82,168,236,.6) !important;
+
+}
+
+ul.nav-tabs > li 
+{
+    float:none;
+    display:inline-block;
+    *display:inline; /* ie7 fix */
+    margin-right: 20px;
+    margin-right: 20px;
+     zoom:1; /* hasLayout ie7 trigger */
+}
+
+ul.nav-tabs li 
+
+{
+  -web-kit-border-bottom-right-radius: 20px;
+  border-bottom-right-radius: 20px;
+  -web-kit-border-bottom-left-radius: 20px;
+  border-bottom-left-radius: 20px;
+border-bottom: 1px solid #ccc;
+border-left: 1px solid #ccc;
+border-right: 1px solid #ccc;
+width: 180px;
+}
+
+.nav-tabs {
+    text-align:center;
+}
+
+.nav-tabs > li.active > a
+{
+background-color: !important transparent;
+}
+
+.nav-tabs {
+    border-bottom: none;
+}
+
+.tabs_content
+{
+
+  width: 80%; 
+  margin: 0 auto;
+  margin-top: 50px;
+
+}
+
+
+
+</style>
+  </head>
+
+
+<body>
+
+
+
+<div class="container" id="main" > 
+
+
+
+
+<!--navigation-->
+<nav class="navbar navbar-default" id="navbar_container">
+      <div class="container">
+          <!--logo-->
+          <div class="navbar-header">
+              <a href="https://www.linkthegap.com/" class="navbar-brand">
+                <img class="hidden-xs" src="https://www.linkthegap.com/assets/img/logo/home_page_logo.png" alt="logo">
+                <img class="visible-xs" src="https://www.linkthegap.com/assets/img/logo/home_page_logo_mobile.png" alt="logo"> 
+              </a>
+          </div>
+
+          <!--menu items-->
+          <div id="mainNavBar">
+
+    
+             <ul class="nav navbar-nav navbar-left logged_in" id="login_join"> 
+                                    <li><a style="color: blue; " href="#" id="login_button"> lOGIN </a> </li>
+                      <li><a style="color: blue; " href="#" id="join_button"> JOIN  </a> </li>
+
+
+                                  <!--<li><a href="#" id="user_profile_button"> <i class="fa fa-user-circle-o" aria-hidden="true"></i></a> </li>-->
+                  
+             </ul>
+
+
+              <ul class="nav navbar-nav navbar-right" id="ltg_menu"> 
+
+                  <li><a href="https://www.linkthegap.com/gaps/"> GAPS </a> </li>
+                  <li><a href="https://www.linkthegap.com/initiatives/"> INITIATIVES </a> </li>
+                  <li><a href="https://www.linkthegap.com/marketplace/"> MARKETPLACE </a> </li> 
+                  <li><a href="https://www.linkthegap.com/ltgfamily/"> LTGFAMILY </a> </li>
+                 
+                  
+              </ul>
+
+          </div>
+
+
+      </div>
+
+</nav>
+<!--navigation-->
+
+
+</script>
+
+
+
+
+
+
+<!--when a user is logged in-->
+ <div style="display: none;" id="logged_in_menu">
+
+<ul class="menu_logged_in">
+
+  <li><i class="fa fa-cog" aria-hidden="true"></i><a href="https://www.linkthegap.com/account/settings.php">settings</a></li> 
+
+  <li><i class="fa fa-circle" aria-hidden="true"></i><a href="#">notifications</a></li>
+
+  <li><i class="fa fa-envelope-o" aria-hidden="true"></i><a href="#">messages</a></li>
+
+  <li><i class="fa fa-heart-o" aria-hidden="true"></i><a href="#">hearts</a></li>
+
+  <li><i class="fa fa-shopping-basket" aria-hidden="true"></i><a href="https://www.linkthegap.com/marketplace/cart.php">shopping basket</a></li>
+  
+  <li><i class="fa fa-sign-out" aria-hidden="true"></i><a href="https://www.linkthegap.com/account/logout.php">logout</a></li>
+
+
+</ul>
+
+ </div>
+
+
+
+
+
+
+      <div style="display: none;" id="login_form">
+          <div class="row">
+
+              <div class="col-sm-12">
+
+                 <form action="https://www.linkthegap.com/account/" method="post">
+
+
+                       <div class="form-group form-group-lg">
+                          <label for="exampleInputEmail1">Email or Username <i class="fa fa-asterisk" id="required" aria-hidden="true"></i></label><br />
+                                                    <input type="text" name="email" id="email" class="form-control"  placeholder="Email or Username" value="">
+                        </div>
+
+
+                        <div class="form-group form-group-lg">
+                          <label for="exampleInputPassword1">Password <i class="fa fa-asterisk" id="required" aria-hidden="true"></i></label><br />
+                                                    <input type="password" name="pass" id="pass" class="form-control"  placeholder="Password">
+                        </div>
+
+
+
+                        <p>
+                        <button type="submit" name="submit_login" class="btn btn-primary  btn-lg btn-block">Submit</button>
+                        <input type="hidden" name="submit_login" value="TRUE" />
+                        </p>
+
+
+                
+                     <p style="text-align: center;"> 
+                     <a href="https://www.linkthegap.com/account/?view=forgot_password" type="button" class="btn btn-link" id="forgot_password">Forgot your password?</a>
+                    </p>
+
+                  </form>
+
+              </div>
+
+          </div>
+
+      </div>
+
+
+
+
+     
+
+
+
+      <div style="display: none;" id="forgot_password">
+
+          <div class="row">
+
+              <div class="col-sm-12">
+
+                 <form>
+
+                    <div class="form-group form-group-lg">
+                      <label for="exampleInputEmail1">Enter your email address below and your password will be reset</label>
+                      <input type="email" class="form-control" id="exampleInputEmail1" placeholder="Email">
+                    </div>
+
+                    <button type="button" class="btn btn-danger  btn-lg btn-block">Submit</button>
+
+                  
+
+                  </form>
+
+              </div>
+          </div>
+
+      </div>
+
+
+
+
+
+
+       <div style="display: none;" id="join_form">
+
+  
+          <div class="alert alert-info" role="alert">
+          <small style="text-align: center;">
+          We charge $0 to use our site. We do not accept advertising, and have no corporate sponsors. We are proud to work for free(dom)! Everything that makes up this website has been voluntarily contributed by someone like YOU.
+          </small>
+          </div>
+
+
+          <form class="join_form" method="post" action="https://www.linkthegap.com/account/?view=join">
+
+           
+
+            <a href="https://www.linkthegap.com/account/?view=login" class="btn btn-link  btn-block ">Have an account?  Log in</a>
+
+
+            <div class="form-group form-group-lg">
+            <label for="username">First Name: <i class="fa fa-asterisk" id="required" aria-hidden="true"></i></label><br />
+                        <input class="form-control" type="text" name="first_name" size="20" maxlength="20" placeholder="Your first name" value="" />
+            </div>
+
+
+
+            <div class="form-group form-group-lg">
+            <label for="username">Last Name: <i class="fa fa-asterisk" id="required" aria-hidden="true"></i> </label><br />
+                        <input class="form-control"  type="text" name="last_name" size="20" maxlength="40" placeholder="Your last name" value="" />
+            </div>
+
+
+
+            <div class="form-group form-group-lg">
+            <label for="username">Username: <i class="fa fa-asterisk" id="required" aria-hidden="true"></i></label><br />
+            <small style="text-align: center;"> (linkthegap.com/username)</small> <br /> 
+                         <input class="form-control"  type="text" name="username" size="20" maxlength="20" placeholder="Pick a username" value="" />
+            </div>
+
+
+
+            <div class="form-group form-group-lg">
+            <label for="username">Email: <i class="fa fa-asterisk" id="required" aria-hidden="true"></i></label><br />
+                        <input class="form-control"  type="text" name="email" size="30" maxlength="80" placeholder="Your email address " value="" />
+            </div>
+
+
+
+            <div class="form-group form-group-lg">
+            <label for="password">Password: <i class="fa fa-asterisk" id="required" aria-hidden="true"></i> </label><br />
+                        <input class="form-control"  type="password" name="password1" placeholder="Create a password" size="20" maxlength="20" />
+             <small style="text-align: center;">Password must be between 7 and 20 characters long and contain 1 lower case, 1 upper case and 1 number. Use only letters and numbers. </small>
+            </div>
+
+
+
+
+            <div class="form-group form-group-lg">
+            <label for="password">Re-enter Password: <i class="fa fa-asterisk" id="required" aria-hidden="true"></i></label><br />
+            <input class="form-control"  type="password" name="password2" size="20" maxlength="20" placeholder="Create a password" />
+            </div>
+
+    
+
+            <p> 
+            <button type="submit" name="submit_join" id="submit_join" class="btn btn-primary  btn-lg btn-block">Join ltg family</button>
+            <input type="hidden" name="submitted" value="TRUE" />
+            </p>
+
+
+            <p style="text-align: center;"> 
+            By joining, you agree to LtG's
+            <button type="button" class="btn btn-link" data-toggle="modal" data-target="#terms_conditions">Terms and Conditions</button> and 
+            <button type="button" class="btn btn-link" data-toggle="modal" data-target="#terms_conditions">Privacy Policy</button>
+            </p>
+
+          </form>
+
+
+</div>
+
+
+
+
+      <div class="row">
+        <div class="col-sm-12" id="errors">
+
+       
+             
+        </div>
+      </div>
+
+
+
+      <div class="modal fade" id="terms_conditions">
+
+                      <div style="width: 50%; " class="modal-dialog">
+
+                        <div class="modal-content">
+
+                       
+
+                           <!--header-->
+                            <div class="modal-header">
+                                <button type="button" class="close" data-dismiss="modal">&times; </button>
+                              
+
+                              <h3 style="text-align: center;"> LINKTHEGAP  TERMS & CONDITIONS </h3>
+
+                            </div>
+
+
+                          <!--body-->
+                           <div class="modal-body">
+                            <p>
+
+
+
+                                Terms and Conditions Terms and Conditions Terms and Conditions Terms and Conditions Terms and Conditions Terms and Conditions Terms and Conditions Terms and Conditions Terms and Conditions Terms and Conditions Terms and Conditions
+
+
+                                 Terms and Conditions Terms and Conditions Terms and Conditions Terms and Conditions Terms and Conditions Terms and Conditions Terms and Conditions Terms and Conditions Terms and Conditions Terms and Conditions Terms and Conditions Terms and Conditions Terms and Conditions Terms and Conditions
+
+                             </p>
+                          </div>
+
+                         
+
+
+                          <!--footer-->
+                          <div class="modal-footer"> 
+
+                           <button type="button" class="close" data-dismiss="modal">close</button>
+
+                          </div>
+
+                        </div>
+
+
+                      </div>
+
+    </div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+    
+
+
+
+
+<!--  tabbed pane - user activities -->
+<style type="text/css">
+	
+.cover_picture:after{
+
+		content: '';
+		background-image: url('../assets/img/uploads/user/cover.jpg');
+
+		background-position: center;
+		background-repeat: no-repeat;
+		background-size: 100%;
+		border-radius: 20px; 
+		border: 1px solid #ccc;
+
+		-webkit-box-shadow: 0 0 10px #000;
+        box-shadow: 0 0 10px #000;
+
+		 
+		width: 100%; 
+		height: 300px;
+		left: 0px;  
+		position: absolute;
+
+		//opacity: 0.9;
+		
+
+		filter: blur(1px);
+		//Browser Specific
+		-webkit-filter: blur(1px);
+		-moz-filter: blur(1px);
+		-o-filter: blur(1px);
+		-ms-filter: blur(1px);
+
+ 	
+}
+
+</style>
+
+
+
+
+
+
+      
+<div class="container" id="home">
+
+<div class="row">
+
+
+	<div class="col-sm-12">
+
+		<div class="row">
+
+		     <div class="col-lg-10 col-centered">
+
+		     	<div class="row">
+
+		     	 
+
+
+	     	 	    <!--top dash profile-->
+	 			    <div class="col-sm-12 profile">
+
+
+		     			    <div class="cover_picture" >   </div>
+
+		     			    <div class="col-sm-12 top_profile" > 
+
+			     			    <div class="col-sm-3">
+			     			    			     			    </div>
+
+			     			    <div class="col-sm-9">
+				     			    <form  role="search" id="search_profile">
+						        	<div class="input-group">
+						            <input type="text" class="form-control" placeholder="connect with ltg family!" name="srch-term" id="srch-term">
+						            <div class="input-group-btn">
+						                <button class="btn btn-default" type="submit"><i class="glyphicon glyphicon-search"></i></button>
+						            </div>
+							        </div>
+							        </form>
+								</div>
+		     			    </div>
+
+
+
+		     			  	<!--profile photo-->
+		     			  	<div class="col-sm-3 user_profile_pic">
+		     			  		<img class="hand_full_picture img-responsive" src="https://www.linkthegap.com/assets/img/logo/land_page_logo.png" width="250" height="250"> 
+		     			  	</div>
+
+
+
+		     			  	<!--about text-->
+		     			  	<div class="col-sm-9">
+			     			  	<div id="profile_text"> 
+
+			     			  		<p> 
+			     			  		is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged. It was popularised in the 1960s with the release of Letraset sheets containing Lorem Ipsum passages, and more recently with desktop publishing software like Aldus PageMaker including versions of Lorem Ipsum.
+			     			  		</p>
+                      <ul class="profile_button">
+                        <li><a class="btn btn-primary connect4change btn-lg connect_btn">connect 4 change</a>
+
+
+<!--private-->
+<div class="webui-popover-content">
+
+  <p class="lead">Contact Info</p>
+   <p><textarea class="form-control focusedInput" rows="10" placeholder="Contact Availability and Preferences" ></textarea>
+</p>
+<p><input class="form-control" placeholder="From (optional)"></input></p>
+<p><input class="form-control" placeholder="Current Location (optional)"></input></p>
+<p><input class="form-control" placeholder="Website (optional)"></input></p>
+<p><input class="form-control" disabled placeholder="https://linkthegap.com/iloveitwhenyoucallmebigdata"></input></p>
+<hr></hr>
+<p style="text-align: center;"><input class="btn btn-primary" value="Save changes"></input></p>
+
+</div>
+
+
+<!--public-->
+
+<!--public
+<div class="webui-popover-content">
+
+  <p>Gibberish</p>
+   <p><textarea class="form-control focusedInput" rows="10" placeholder="profile text ..." ></textarea>
+</p>
+<p><input class="form-control" placeholder="Big data in da house"></input></p>
+
+<p><input class="btn btn-primary" value="Save changes"></input></p>
+
+</div>
+public-->
+
+
+
+
+
+                        </li>
+                        
+                        <li class="profile_edit_btn">
+                      
+
+
+                      <!-- bootstrap modal for editing user profile -->
+
+                      <!-- Button trigger modal -->
+                      <a class="btn btn-link" data-toggle="modal" data-target="#EditUserProfile">
+                      <i class="fa fa-pencil-square-o" aria-hidden="true"></i>
+                      </a>
+
+                      <!-- Modal -->
+                      <div style="width: 1100px; margin: 0 auto; margin-right: 100px;" class="modal fade" id="EditUserProfile" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true"> 
+                      <div class="modal-dialog" role="document">
+                        <div style="width: 800px; margin: 0 auto;" class="modal-content">
+                          <div class="modal-header">
+                            <h5 class="modal-title" id="exampleModalLabel">Introduce yourself to your make-change community!</h5>
+                            <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                              <span aria-hidden="true">&times;</span>
+                            </button>
+                          </div>
+                          <div class="modal-body">
+
+                            <textarea id="summernote5" class="form-control focusedInput" rows="10" placeholder="profile text ..." >is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged. It was popularised in the 1960s with the release of Letraset sheets containing Lorem Ipsum passages, and more recently with desktop publishing software like Aldus PageMaker including versions of Lorem Ipsum.</textarea>
+
+                          </div>
+                          <div class="modal-footer">
+                            <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+                            <button type="button" class="btn btn-primary">Save changes</button>
+                          </div>
+                        </div>
+                      </div>
+                      </div>
+                      </li>
+
+
+
+                      </ul>	
+			     			  	</div>
+		     			  	</div>
+
+
+
+		     			 
+		     			   <!--cover photo-->
+		     			
+
+					</div>
+					<!--top dash profile-->
+
+
+
+
+
+		     	<!--tabs navigation --> 
+
+		           <div class="col-sm-12"> 
+
+						<div style="margin-top: 20px; ">
+
+						  <!-- Nav tabs -->
+						  <ul class="nav nav-tabs" id="nav-tabs" role="tablist">
+
+
+
+						
+						    <li role="presentation">
+						    <a href="#home" aria-controls="home" role="tab" data-toggle="tab">GAPS</a>
+						    </li>
+
+
+						
+						    <li role="presentation">
+						    <a href="#profile" aria-controls="profile" role="tab" data-toggle="tab">UPDATES</a>
+						    </li>
+
+						    <li role="presentation">
+						    <a href="#messages" aria-controls="messages" role="tab" data-toggle="tab">PLEDGES</a>
+						    </li>
+
+						    <li role="presentation">
+						    <a href="#settings" aria-controls="settings" role="tab" data-toggle="tab">INSPO</a>
+						    </li>
+
+						   <li role="presentation">
+						    <a href="#skills" aria-controls="skills" role="tab" data-toggle="tab">SKILLS</a>
+						   </li>
+
+						  </ul>
+
+
+
+
+
+
+
+
+						  <!-- Tab panes -->
+						  <div class="tab-content">
+
+
+
+
+               
+      						     <!--gaps-->
+      						    <div role="tabpanel" class="tab-pane active" id="home"> 
+
+                         <div class="tabs_content">
+
+                                first
+
+
+                      </div>
+
+
+						    </div>
+						    <!--gaps-->
+
+
+
+
+
+						    <!--updates-->
+						    <div role="tabpanel" class="tab-pane" id="profile"> 
+                 
+                <!--tabs_content-->
+                <div class="tabs_content">
+                  <p class="lead"> 
+                    <a href="#" class="btn btn-primary"> post updates</a> 
+                  </p>
+                </div>
+
+                <!--tabs_content-->
+
+                </div>
+						    <!--updates-->
+
+
+
+
+						    <!--pledges-->
+						    <div role="tabpanel" class="tab-pane" id="messages"> 
+                  <div class="tabs_content">
+						    pledges 
+                  </div>
+						    </div>
+						    <!--pledges-->
+
+
+						    <!--inspo-->
+						    <div role="tabpanel" class="tab-pane" id="settings"> 
+                <div class="tabs_content">
+						    inspo 
+                </div>
+						    </div>
+						    <!--inspo-->
+
+
+						    <!--skills--> 
+						    <div role="tabpanel" class="tab-pane" id="skills"> 
+                  <div class="tabs_content">
+						        skills 
+                  </div>
+						    </div>
+						    <!--skills-->
+
+
+						  </div>
+
+
+
+						</div>
+
+		     		</div>
+		     	  <!--tabs navigation --> 
+
+
+
+
+		     	</div>
+
+		     </div>	
+
+		</div>
+
+		  
+  </div>
+
+
+
+
+
+
+</div><!--row-->
+
+
+
+</div><!--home container-->
+
+
+
+
+
+
+
+
+
+<!--footer-->
+<footer> 
+
+<div class="container" id="footer"> 
+
+    
+<div class="col-xs-12 col-md-12">
+
+<div class="row">
+
+         <div class="col-xs-3  col-md-3">
+
+          <h4>ABOUT LTG</h4>
+
+
+            <ul class="unstyled">
+
+              <li> <a href="#">Long Description</a> </li>
+              <li> <a href="#">Birth LtG</a></li>
+              <li> <a href="#">YOUser-generated</a></li>
+             
+
+             </ul>
+
+         </div>
+
+
+         <div class="col-xs-3  col-md-3">
+
+
+           <h4>GAPS</h4>
+            <ul class="unstyled">
+              <li> <a href="#">How it works</a></li>
+              <li> <a href="#">Quick-fact</a></li>
+              <li> <a href="#">First-hand Story</a></li>
+              <li> <a href="#">Research-based Story</a></li>
+
+             </ul>
+
+
+        </div>
+
+ 
+
+        <div class="col-xs-2  col-md-2">
+
+          <h4>INITIATIVES</h4>
+            <ul class="unstyled">
+              <li> <a href="#">How it works</a></li>
+              <li> <a href="#">See all initiatives</a></li>
+              <li> <a href="#">Initiative Application</a></li>
+             
+
+             </ul>
+
+
+         </div>
+
+
+         <div class="col-xs-2  col-md-2">
+
+
+            <h4>MARKETPLACE</h4>
+            <ul class="unstyled">
+              <li> <a href="#">How it works</a></li>
+              <li> <a href="#">Browse all Shops</a></li>
+              <li> <a href="#">Open a Shop</a></li>
+         
+
+             </ul>
+
+        </div>
+
+
+
+
+
+         <div class="col-xs-2  col-md-2">
+
+
+           <h4>LTG FAMILY</h4>
+
+            <ul class="unstyled">
+              <li> <a href="#">How it works</a></li>
+              <li> <a href="#">Pledge 4 Change</a></li>
+              <li> <a href="#">Skill 4 Change</a></li>
+             
+
+             </ul>
+
+            
+            
+        </div>
+
+
+
+</div><!--row-->
+
+
+</div><!--col-12--> 
+
+
+
+      <div class="row">
+
+         <div class="col-xs-6 col-md-6 col-md-offset-3">
+
+            <ul class="list-inline"> 
+              <li> <a href="#"> <i class="fa fa-twitter" aria-hidden="true"></i> </a> </li>
+              <li> <a href="#"> <i class="fa fa-facebook" aria-hidden="true"></i> </a> </li>
+              <li> <a href="#"> <i class="fa fa-google-plus" aria-hidden="true"></i> </a> </li>
+
+            </ul>
+
+        </div>
+       
+        </div>
+
+
+        <div class="row">
+
+            <div class="col-sm-12">
+
+                <p> Copyright &copy; - 2017 LINKTHEGAP INC, A CANADIAN NOT-FOR-PROFIT CORPORATION ACT(NFP ACT) 911001-1 </p>
+
+            </div>
+
+        </div>
+
+
+
+
+      </div>
+  </footer>
+
+</div><!--end container main--> 
+
+
+
+
+    <script src="//ajax.googleapis.com/ajax/libs/jquery/2.0.0/jquery.min.js"></script>
+
+
+
+    <!-- jQuery (necessary for Bootstrap's JavaScript plugins) -->
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
+
+    <!-- Include all compiled plugins (below), or include individual files as needed -->
+    <script src="https://www.linkthegap.com/assets/lib/bootstrap-3.3.7-dist/js/bootstrap.min.js"></script>
+
+    <script src="https://www.linkthegap.com/assets/lib/webui-popover-master/src/jquery.webui-popover.js"></script>
+
+    <script src="https://www.linkthegap.com/assets/js/main.js"></script>
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/summernote/0.8.2/summernote.min.js"></script>
+
+    <script src="https://www.linkthegap.com/assets/lib/summernote-master/dist/summernote.js"></script>
+
+
+    <script src="https://www.linkthegap.com/assets/lib/dropzone-4.3.0/dist/min/dropzone.min.js"></script>
+
+
+    <link rel="stylesheet" type="text/css" href="https://www.linkthegap.com/assets/lib/dropzone-4.3.0/dist/min/dropzone.min.css"/>
+    
+
+    <link rel="stylesheet" type="text/css" href="https://www.linkthegap.com/assets/lib/jquery.vectormap/jquery-jvectormap-1.2.2.css"/>
+
+    <link rel="stylesheet" type="text/css" href="https://www.linkthegap.com/assets/lib/jqvmap/jqvmap.min.css"/>
+
+    <link rel="stylesheet" type="text/css" href="https://www.linkthegap.com/assets/lib/datetimepicker/css/bootstrap-datetimepicker.min.css"/>
+
+
+  <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyA7AZKTQtNQYH-KHX3Pl9-IYLkUwKRmrpQ"
+    async defer></script>
+
+
+<script src="https://www.google.com/recaptcha/api.js"></script>
+
+
+
+
+<style type="text/css">
+ 
+ /* Start by setting display:none to make this hidden.
+   Then we position it in relation to the viewport window
+   with position:fixed. Width, height, top and left speak
+   for themselves. Background we set to 80% white with
+   our animation centered, and no-repeating */
+ #loadingmessage {
+    display:    none;
+    position:   fixed;
+    z-index:    1000;
+    top:        0;
+    left:       0;
+    height:     100%;
+    width:      100%;
+    background: rgba( 255, 255, 255, .1 ) 
+                url('https://www.linkthegap.com/assets/img/backgrounds/ajax-loader.gif') 
+                50% 50% 
+                no-repeat;
+}
+
+/* When the body has the loading class, we turn
+   the scrollbar off with overflow:hidden */
+body.loading {
+    overflow: hidden;   
+}
+
+/* Anytime the body has the loading class, our
+   modal element will be visible */
+body.loading .modal {
+    display: block;
+}
+
+</style>
+
+
+
+<div id='loadingmessage' style='display:none'>
+  <!--<img src='assets/img/backgrounds/ajax-loader.gif'/>-->
+
+
+</div>
+
+
+   <script>
+
+      $(document).ready(function() {
+
+
+
+$('a.connect4change').webuiPopover({
+
+
+            trigger:'click',
+            animation:'pop',
+            closeable:true,
+            width:600,
+            placement:'bottom',
+            offsetLeft:5,
+            multi:true,
+
+
+          });
+
+
+
+
+
+        $("div#myId").dropzone({ 
+          url: "../scripts/upload.php",
+          maxFiles: 1,
+                maxfilesexceeded: function(file) {
+                    this.removeAllFiles();
+                    this.addFile(file);
+                }
+            }
+
+          );
+
+        $('#summernote, #summernote2, #summernote3, #summernote4, #summernote5').summernote(
+        
+        {
+
+          toolbar: [
+            // [groupName, [list of button]]
+            ['style', ['bold', 'italic', 'underline', 'clear']],
+            ['font', ['strikethrough', 'superscript', 'subscript']],
+            ['fontsize', ['fontsize']],
+            ['color', ['color']],
+            ['para', ['ul', 'ol', 'paragraph']],
+            ['height', ['height']],
+            ['insert', ['picture','link','video', 'table', 'hr']]
+          ],
+        height: 300,  
+        placeholder: 'type here...',
+        fontNames: ['Arial', 'Arial Black', 'Comic Sans MS', 'Courier New'],   // set editor height
+        minHeight: null,             // set minimum height of editor
+        maxHeight: null,             // set maximum height of editor
+        focus: true
+                       // set focus to editable area after initializing summernote
+      }
+      );
+
+      });
+
+      </script>
+
+
+  </body>
+</html>

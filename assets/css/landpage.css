@@ -8,9 +8,9 @@
 
 #lang_logo{
 
-	width: 200px; 
+	width: 200px;
 	margin: 0 auto;
-	margin-bottom: 10px; 
+	margin-bottom: 10px;
 
 }
 
@@ -20,20 +20,22 @@ h2{
 	text-align: center;
 	font-family: Synchro_LET;
 	text-align: center;
+    color: black;
+
 
 }
 
 .col-centered{
     float: none;
     margin: 0 auto;
-    min-height: 1000px; 
+    min-height: 1000px;
 }
 
 video{
 
-width: 100%; 
+width: 100%;
 	margin: 0 auto;
-	
+
 
 }
 
@@ -53,8 +55,8 @@ p.lead{
 
 	width: 1024px;
 	margin: 0 auto;
-	margin-bottom: 10px; 
-	
+	margin-bottom: 10px;
+
 
 
 }
@@ -82,8 +84,8 @@ text-align: center;
 
 	width: 100%;
 	margin: 0 auto;
-	min-height: 400px; 
-	padding: 5px; 
+	min-height: 400px;
+	padding: 5px;
 
 }
 
@@ -92,8 +94,8 @@ text-align: center;
 
 	width: 100%;
 	margin: 0 auto;
-	height: 300px; 
-	padding: 5px; 
+	height: 300px;
+	padding: 5px;
 
 }
 
@@ -105,11 +107,11 @@ text-align: center;
 
 	width: 100%;
 	margin: 0 auto;
-	min-height: 200px; 
+	min-height: 200px;
 	max-height: 250px;
-	margin-top: 10px;  
-	padding: 10px; 
-	
+	margin-top: 10px;
+	padding: 10px;
+
 
 }
 
@@ -122,16 +124,16 @@ text-align: center;
 
 	width: 100%;
 	margin: 0 auto;
-	height: 300px; 
-	padding: 5px; 
-	
+	height: 300px;
+	padding: 5px;
+
 }
 
 
 
 ul#social_buttons{
 
-	width: 100%; 
+	width: 100%;
 	margin: 0 auto;
 
 }
@@ -143,17 +145,11 @@ ul#social_buttons{
 	text-align: center;
 }
 
-
-
-
-
-
-
-
-
-
-
-
-
-
+/*- Kate CSS -->*/
+.img-responsive 
+{
+max-width: 100%; 
+height: auto; 
+display: block;
+}
 
